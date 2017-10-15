@@ -17,7 +17,7 @@
     <artifactId>example-child-jar</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging> 
-    <name>Eonian Tech: Example Child JAR</name>
+    <name>Eonian Example Child JAR</name>
     <description>An example JAR project showcasing the Parent POM's pipelining capabilities.</description>
     <dependencies> 
         <!-- Logging -->
