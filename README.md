@@ -15,14 +15,14 @@ mvn -DskipTests clean verify
 Next we will execute the SureFire plugin to run our unit tests. But we also need to execute the JaCoCo plugin which will determine test coverage and generate the coverage report.
 
 ```
-mvn jacoco:prepare-agent surefire:test jacoco:report
+mvn jacoco:prepare-agent@preTest surefire:test jacoco:report@postTest
 ```
 
 ### Integration Test
 Integration tests are super important for WAR projects that are deployed to a server. But our JAR project might also contain code that requires infrastructure. If so, we’ll need to write integration tests and execute them similarly to the way we did the unit tests. But this time, instead of using the SureFire plugin, we will use the FailSafe Plugin. When running integration tests, the code should consume resources (databases and services) in a static development environment.
 
 ```
-mvn jacoco:prepare-agent-integration failsafe:integration-test jacoco:report-integration
+mvn jacoco:prepare-agent-integration@preIT failsafe:integration-test jacoco:report-integration@postIT failsafe:verify
 ```
 
 ### Code Analysis
